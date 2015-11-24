@@ -1,0 +1,22 @@
+<md-list ng-cloak>
+<md-subheader class="md-no-sticky">Mijn Competities</md-subheader>
+
+<md-list-item ng-repeat="competition in competitions" ng-class-odd="'odd'" ng-class-even="'even'">
+    <div md-ink-ripple ng-click="edit('{{team.uuid}}')" style="width: 100%;"  >
+        <table width="100%">
+            <tr >
+                <td>{{ competition.competitionname }}</td>
+            </tr>
+        </table>
+    </div>
+</md-list-item>
+</md-list>
+
+<br>
+<br>
+
+<md-button class="md-raised md-primary" ng-click="newTeam()"  >
+    Competitie toevoegen
+</md-button>
+
+

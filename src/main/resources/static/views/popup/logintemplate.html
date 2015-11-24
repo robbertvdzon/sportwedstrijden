@@ -1,0 +1,33 @@
+<md-dialog aria-label="Login"  ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Login</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content style="max-width:800px;max-height:810px; ">
+                <md-input-container>
+                    <label>Name:</label>
+                    <input ng-model="name" required>
+                </md-input-container>
+                <md-input-container>
+                    <label>Password:</label>
+                    <input ng-model="passwd" required>
+                </md-input-container>
+
+                <p ng-show="loginfailed" class="error">
+                    Authentication failed
+                </p>
+                <small>Note: initial username/password is john/pw</small>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="login()" style="margin-right:20px;">
+                Login
+            </md-button>
+            <md-button ng-click="hide()" style="margin-right:20px;">
+                Cancel
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

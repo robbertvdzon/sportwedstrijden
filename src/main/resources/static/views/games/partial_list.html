@@ -1,0 +1,22 @@
+<md-list ng-cloak>
+<md-subheader class="md-no-sticky">Mijn Wedstrijden</md-subheader>
+
+<md-list-item ng-repeat="game in games" ng-class-odd="'odd'" ng-class-even="'even'">
+    <div md-ink-ripple ng-click="edit('{{game.uuid}}')" style="width: 100%;"  >
+        <table width="100%">
+            <tr >
+                <td>{{ game.tegenpartij }}</td>
+            </tr>
+        </table>
+    </div>
+</md-list-item>
+</md-list>
+
+<br>
+<br>
+
+<md-button class="md-raised md-primary" ng-click="newTeam()"  >
+    Game toevoegen
+</md-button>
+
+
