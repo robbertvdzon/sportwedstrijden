@@ -1,0 +1,1 @@
+java -jar target\storageserver-0.0.1-SNAPSHOT.jar --spring.config.location=local.properties 
