@@ -3,6 +3,7 @@ server.port = 8085
 spring.datasource.url=jdbc:mysql://www.mijnsportwedstrijden.nl:3306/teamsport_app_n?zeroDateTimeBehavior=convertToNull
 spring.datasource.username=root
 spring.datasource.password=[*******password*********]
+
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 
 spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
