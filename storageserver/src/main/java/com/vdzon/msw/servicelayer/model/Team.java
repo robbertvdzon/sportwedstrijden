@@ -2,6 +2,7 @@ package com.vdzon.msw.servicelayer.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,8 +18,8 @@ public class Team implements Serializable {
     @OneToMany(mappedBy = "team", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Teammember> teammembers;
 
-    @OneToMany(mappedBy = "teamId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Competition> competitions;
+    @OneToMany(mappedBy = "team", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Competition> competitions = new ArrayList<Competition>();
 
     private String teamname;
 
@@ -61,4 +62,6 @@ public class Team implements Serializable {
     public void setCompetitions(List<Competition> competitions) {
         this.competitions = competitions;
     }
+
+
 }

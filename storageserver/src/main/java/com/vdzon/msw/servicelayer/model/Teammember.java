@@ -12,7 +12,8 @@ public class Teammember implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String uuid;
-    private Long userId;
+    @ManyToOne(cascade=CascadeType.ALL)
+    private User user;
 
     @ManyToOne(cascade=CascadeType.ALL)
     private Team team;
@@ -35,12 +36,12 @@ public class Teammember implements Serializable {
         this.uuid = uuid;
     }
 
-    public Long getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getNickname() {

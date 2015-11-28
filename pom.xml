@@ -13,6 +13,7 @@
         <module>emailservice</module>
         <module>eventservice</module>
         <module>storageserver</module>
+        <module>importmswservice</module>
     </modules>
 
     <!--<build>-->

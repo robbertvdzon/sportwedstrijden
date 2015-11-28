@@ -2,6 +2,7 @@ package com.vdzon.msw.servicelayer.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,8 +16,8 @@ public class User implements Serializable {
     private String username;
     private String passwd;
     private String permissions;
-    @OneToMany(mappedBy = "userId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Teammember> teammembers;
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Teammember> teammembers = new ArrayList<>();
 
     public String getUsername() {
         return username;

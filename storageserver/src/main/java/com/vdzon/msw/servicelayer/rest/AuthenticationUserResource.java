@@ -14,6 +14,9 @@ import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/authentication")
@@ -29,6 +32,21 @@ public class AuthenticationUserResource {
 
     @RequestMapping(value = "/findByUsername", method = RequestMethod.GET)
     public ResponseEntity<AuthenticationUserDto> getContacts(String username) throws Exception {
+
+        List<User> users = new ArrayList<>();
+        Iterable<User> all = userService.findAll();
+
+
+        for (Iterator<User> iterator = all.iterator();iterator.hasNext(); ){
+            User user = iterator.next();
+            if (user.getUsername().equals("robbert")){
+                System.out.println("Robbert "+user.getUuid());
+            }
+            users.add(user);
+        }
+
+        System.out.println(users.size());
+
         User user = userService.findByUsername(username);
         if (user==null){
             return new ResponseEntity(HttpStatus.UNAUTHORIZED);

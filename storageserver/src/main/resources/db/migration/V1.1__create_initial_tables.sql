@@ -40,14 +40,12 @@ create table game (
 );
 
 INSERT INTO  `users` (`id`, `username`, `passwd`, `permissions`, `uuid`) VALUES
-( 0,'q', 'q', 'USER', '2347'),
-( 1,'robbert', 'robbert', 'USER,ADMIN', '2345'),
-( 2,'john', 'pw', 'USER', '2346');
+( 0,'q', 'q', 'USER', '2347');
 
 
 INSERT INTO  `teammember` (`id`, `nickname`, `uuid`, `user_id`, `team_id`) VALUES
 ( 0,'goofie','1234', 0, 0),
-( 1,'schaapie','1235', 0, 1);
+( 1,'goofie','1235', 0, 1);
 
 INSERT INTO  `team` (`id`, `teamname`, `uuid`) VALUES
 ( 0,'FA','1234'),

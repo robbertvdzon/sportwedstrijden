@@ -13,7 +13,8 @@ public class Game implements Serializable {
 
     private String uuid;
 
-    private Long competitionId;
+    @ManyToOne(cascade=CascadeType.ALL)
+    private Competition competition;
 
     private String tegenpartij;
 
@@ -33,12 +34,12 @@ public class Game implements Serializable {
         this.uuid = uuid;
     }
 
-    public Long getCompetitionId() {
-        return competitionId;
+    public Competition getCompetition() {
+        return competition;
     }
 
-    public void setCompetitionId(Long competitionId) {
-        this.competitionId= competitionId;
+    public void setCompetition(Competition competition) {
+        this.competition = competition;
     }
 
     public String getTegenpartij() {

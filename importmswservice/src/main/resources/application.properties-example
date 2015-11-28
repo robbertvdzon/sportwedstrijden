@@ -1,0 +1,21 @@
+server.port = 8085
+
+spring.datasource.url=jdbc:mysql://www.mijnsportwedstrijden.nl:3306/teamsport_app_n?zeroDateTimeBehavior=convertToNull
+spring.datasource.username=root
+spring.datasource.password=[*******password*********]
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.datasource.continueOnError=true
+spring.datasource.initialize=true
+spring.jpa.hibernate.ddl-auto=none
+spring.template.cache=false
+spring.thymeleaf.cache=false
+spring.jpa.hibernate.naming_strategy=org.hibernate.cfg.EJB3NamingStrategy
+
+#spring.jpa.show-sqll=true
+#logging.level.org.hibernate.SQL=DEBUG
+#logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+
+storage.server.host=localhost
+storage.server.port=8081

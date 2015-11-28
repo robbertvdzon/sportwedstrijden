@@ -60,7 +60,7 @@ public class TeammembersResource {
             teammember = new Teammember();
             teammember.setUuid(UUID.randomUUID().toString());
         }
-        teammember.setUserId(user.getId());
+        teammember.setUser(user);
         teammember.setTeam(team);
         teammemberRepository.save(teammemberMapper.mergeModel(dto, teammember));
         return new ResponseEntity<TeammemberDto>(teammemberMapper.toDto(teammember), HttpStatus.OK);

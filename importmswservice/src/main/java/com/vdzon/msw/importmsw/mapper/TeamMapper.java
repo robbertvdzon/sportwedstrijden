@@ -1,8 +1,8 @@
-package com.vdzon.msw.servicelayer.mapper;
+package com.vdzon.msw.importmsw.mapper;
 
-import com.vdzon.msw.servicelayer.dto.TeamDto;
-import com.vdzon.msw.servicelayer.model.Team;
-import com.vdzon.msw.servicelayer.model.Teammember;
+import com.vdzon.msw.importmsw.dto.TeamDto;
+import com.vdzon.msw.importmsw.model.Team;
+import com.vdzon.msw.importmsw.model.Teammember;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
@@ -18,17 +18,16 @@ public class TeamMapper {
     @Inject
     CompetitionMapper competitionMapper;
 
-    public Team mergeModel(final TeamDto dto, Team model) {
-        model.setTeamname(dto.getTeamname());
-        return model;
-    }
-
     public TeamDto toDto(final Team model) {
         if (model == null) return null;
         TeamDto dto = new TeamDto();
         dto.setTeamname(model.getTeamname());
-        dto.setUuid(model.getUuid());
-        dto.setTeammembers(teammemberMapper.toDto(model.getTeammembers()));
+        dto.setUuid(""+model.getId());
+        for (Teammember teammember:model.getTeammembers()){
+            if (!teammember.isDeleted()){
+                dto.getTeammembers().add(teammemberMapper.toDto(teammember));
+            }
+        }
         dto.setCompetitions(competitionMapper.toDto(model.getCompetitions()));
         return dto;
     }
