@@ -45,14 +45,28 @@ public class InitialisationService {
     }
 
     public void initialize() {
+        try{
+            importFromMsw();
+        }
+        catch(Exception ex){
+            // try again, the service is not up yet. We must change this later, then just every night
+            try {
+                Thread.sleep(90*1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            importFromMsw();
+
+        }
+    }
+
+    public void importFromMsw() {
         System.out.println("Import all users from old database");
 
         UriComponentsBuilder uriUserBuilder = UriComponentsBuilder.fromUriString("http://" + storageServerHost + ":" + storageServerPort).path("/api/" + SERVICE + "/importUser");
         UriComponentsBuilder uriAuthUserBuilder = UriComponentsBuilder.fromUriString("http://" + storageServerHost + ":" + storageServerPort).path("/api/" + SERVICE + "/importAuthenticationUser");
 
         RestTemplate restTemplate = new RestTemplate();
-
-//        User u = userRepository.findByUsername("robbert");
 
         for (User u : userRepository.findAll()) {
             if (activeUser(u)) {
@@ -72,6 +86,7 @@ public class InitialisationService {
             }
         }
     }
+
 
 
     private boolean activeUser(User user) {
