@@ -1,7 +1,7 @@
 package com.vdzon.msw.portlet.rest;
 
+import com.vdzon.msw.portlet.dto.UserDto;
 import com.vdzon.msw.portlet.services.AuthenticationService;
-import com.vdzon.msw.servicelayer.dto.UserDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;

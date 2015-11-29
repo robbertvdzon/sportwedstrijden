@@ -1,7 +1,7 @@
 package com.vdzon.msw.portlet.authentication;
 
+import com.vdzon.msw.portlet.dto.AuthenticationUserDto;
 import com.vdzon.msw.portlet.rest.PortletResourceHelper;
-import com.vdzon.msw.servicelayer.dto.AuthenticationUserDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
