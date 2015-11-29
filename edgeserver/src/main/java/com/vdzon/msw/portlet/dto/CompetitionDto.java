@@ -10,8 +10,6 @@ public class CompetitionDto implements Serializable {
     private String competitionname;
     private String season;
     private Long status;
-    private Long type;
-
 
     public String getUuid() {
         return uuid;
@@ -61,11 +59,4 @@ public class CompetitionDto implements Serializable {
         this.status = status;
     }
 
-    public Long getType() {
-        return type;
-    }
-
-    public void setType(Long type) {
-        this.type = type;
-    }
 }

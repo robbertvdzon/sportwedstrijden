@@ -19,12 +19,12 @@ public class User implements Serializable {
     private String permissions;
     private String email;
     private String name;
-    private boolean activeAccount;
+    private Boolean activeAccount;
     private String activationID;
     private Date creationDate;
     private String phonenumber;
     private String requestConnectTeam;
-    private boolean proUser;
+    private Boolean proUser;
 
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -98,11 +98,11 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public boolean isActiveAccount() {
+    public Boolean isActiveAccount() {
         return activeAccount;
     }
 
-    public void setActiveAccount(boolean activeAccount) {
+    public void setActiveAccount(Boolean activeAccount) {
         this.activeAccount = activeAccount;
     }
 
@@ -138,11 +138,11 @@ public class User implements Serializable {
         this.requestConnectTeam = requestConnectTeam;
     }
 
-    public boolean isProUser() {
+    public Boolean isProUser() {
         return proUser;
     }
 
-    public void setProUser(boolean proUser) {
+    public void setProUser(Boolean proUser) {
         this.proUser = proUser;
     }
 }

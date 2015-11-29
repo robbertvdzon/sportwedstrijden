@@ -15,7 +15,7 @@ public class Competition implements Serializable {
     private String uuid;
     private String season;
     private Long status;
-    private Long type;
+//    private Long type;
 
 
     @ManyToOne(cascade=CascadeType.ALL)
@@ -82,11 +82,4 @@ public class Competition implements Serializable {
         this.status = status;
     }
 
-    public Long getType() {
-        return type;
-    }
-
-    public void setType(Long type) {
-        this.type = type;
-    }
 }

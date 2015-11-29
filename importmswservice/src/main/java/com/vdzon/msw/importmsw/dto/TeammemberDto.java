@@ -8,7 +8,7 @@ public class TeammemberDto implements Serializable {
     private String nickname;
     private String userUuid;
     private String teamUuid;
-    private String admin;
+    private boolean admin;
     private boolean deleted;
     private boolean supporter;
     private String invitationEmail;
@@ -49,11 +49,11 @@ public class TeammemberDto implements Serializable {
         this.teamUuid = teamUuid;
     }
 
-    public String getAdmin() {
+    public boolean getAdmin() {
         return admin;
     }
 
-    public void setAdmin(String admin) {
+    public void setAdmin(boolean admin) {
         this.admin = admin;
     }
 

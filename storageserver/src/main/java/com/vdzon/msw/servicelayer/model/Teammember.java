@@ -13,14 +13,14 @@ public class Teammember implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String uuid;
-    private String admin;
-    private boolean deleted;
-    private boolean supporter;
+    private Boolean admin;
+    private Boolean deleted;
+    private Boolean supporter;
     private String invitationEmail;
     private Date invitationDate;
     private String invitationID;
     private Long acceptEmail;
-    private boolean invaller;
+    private Boolean invaller;
     private String nickname;
 
     @ManyToOne(cascade=CascadeType.ALL)
@@ -28,7 +28,6 @@ public class Teammember implements Serializable {
 
     @ManyToOne(cascade=CascadeType.ALL)
     private Team team;
-
 
     public Long getId() {
         return id;
@@ -46,51 +45,27 @@ public class Teammember implements Serializable {
         this.uuid = uuid;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
-    }
-
-    public String getAdmin() {
+    public Boolean getAdmin() {
         return admin;
     }
 
-    public void setAdmin(String admin) {
+    public void setAdmin(Boolean admin) {
         this.admin = admin;
     }
 
-    public boolean isDeleted() {
+    public Boolean getDeleted() {
         return deleted;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
     }
 
-    public boolean isSupporter() {
+    public Boolean getSupporter() {
         return supporter;
     }
 
-    public void setSupporter(boolean supporter) {
+    public void setSupporter(Boolean supporter) {
         this.supporter = supporter;
     }
 
@@ -126,11 +101,35 @@ public class Teammember implements Serializable {
         this.acceptEmail = acceptEmail;
     }
 
-    public boolean isInvaller() {
+    public Boolean getInvaller() {
         return invaller;
     }
 
-    public void setInvaller(boolean invaller) {
+    public void setInvaller(Boolean invaller) {
         this.invaller = invaller;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 }
