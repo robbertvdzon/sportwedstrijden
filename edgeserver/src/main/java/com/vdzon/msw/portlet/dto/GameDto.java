@@ -1,16 +1,11 @@
-package com.vdzon.msw.servicelayer.model;
+package com.vdzon.msw.portlet.dto;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-@Table(name = "game")
-public class Game implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class GameDto implements Serializable {
     private String uuid;
+    private String conpetitionUuid;
     private String tegenpartij;
     private Long datetime;
     private String membersPresentYes;
@@ -39,18 +34,6 @@ public class Game implements Serializable {
     private Long tooShortSended;
     private Long warningSended;
 
-    @ManyToOne(cascade=CascadeType.ALL)
-    private Competition competition;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getUuid() {
         return uuid;
     }
@@ -59,12 +42,12 @@ public class Game implements Serializable {
         this.uuid = uuid;
     }
 
-    public Competition getCompetition() {
-        return competition;
+    public String getConpetitionUuid() {
+        return conpetitionUuid;
     }
 
-    public void setCompetition(Competition competition) {
-        this.competition = competition;
+    public void setConpetitionUuid(String conpetitionUuid) {
+        this.conpetitionUuid = conpetitionUuid;
     }
 
     public String getTegenpartij() {

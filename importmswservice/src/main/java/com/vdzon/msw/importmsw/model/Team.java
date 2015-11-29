@@ -42,7 +42,6 @@ public class Team implements Serializable {
     private Long managedCompetitieID;
     private Long strafpunten;
     private String aanvoerder;
-    private String email;
     @OneToMany(mappedBy = "teamID", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Competition> competitions;
     @OneToMany(mappedBy = "team", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -302,14 +301,6 @@ public class Team implements Serializable {
 
     public void setAanvoerder(String aanvoerder) {
         this.aanvoerder = aanvoerder;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public List<Competition> getCompetitions() {

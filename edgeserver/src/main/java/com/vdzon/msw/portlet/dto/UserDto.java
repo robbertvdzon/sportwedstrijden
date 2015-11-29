@@ -1,4 +1,4 @@
-package com.vdzon.msw.importmsw.dto;
+package com.vdzon.msw.portlet.dto;
 
 import java.io.Serializable;
 import java.sql.Date;

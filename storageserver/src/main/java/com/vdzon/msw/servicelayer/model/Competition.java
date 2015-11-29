@@ -12,8 +12,12 @@ public class Competition implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String uuid;
+    private String season;
+    private Long status;
+    private Long type;
+
+
     @ManyToOne(cascade=CascadeType.ALL)
     private Team team;
 
@@ -60,5 +64,29 @@ public class Competition implements Serializable {
 
     public void setGames(List<Game> games) {
         this.games = games;
+    }
+
+    public String getSeason() {
+        return season;
+    }
+
+    public void setSeason(String season) {
+        this.season = season;
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Long getType() {
+        return type;
+    }
+
+    public void setType(Long type) {
+        this.type = type;
     }
 }
