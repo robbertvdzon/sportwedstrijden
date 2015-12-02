@@ -1,4 +1,4 @@
-package com.vdzon.msw.portlet.rest;
+package com.vdzon.msw.edgeserver.rest;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;

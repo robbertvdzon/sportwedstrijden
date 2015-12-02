@@ -2,7 +2,6 @@ package com.vdzon.msw.servicelayer.mapper;
 
 import com.vdzon.msw.servicelayer.dto.TeamDto;
 import com.vdzon.msw.servicelayer.model.Team;
-import com.vdzon.msw.servicelayer.model.Teammember;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
@@ -20,6 +19,15 @@ public class TeamMapper {
 
     public Team mergeModel(final TeamDto dto, Team model) {
         model.setTeamname(dto.getTeamname());
+        model.setUuid(dto.getUuid());
+        model.setVereniging(dto.getVereniging());
+        model.setSport(dto.getSport());
+        model.setVoorkeursNrAanwezig(dto.getVoorkeursNrAanwezig());
+        model.setTekortMailTo(dto.getTekortMailTo());
+        model.setWaarschuwingMailTo(dto.getWaarschuwingMailTo());
+        model.setWaarschuwingMailDagen(dto.getWaarschuwingMailDagen());
+        model.setReminderDays(dto.getReminderDays());
+        model.setStrafpunten(dto.getStrafpunten());
         return model;
     }
 
@@ -28,6 +36,14 @@ public class TeamMapper {
         TeamDto dto = new TeamDto();
         dto.setTeamname(model.getTeamname());
         dto.setUuid(model.getUuid());
+        dto.setVereniging(model.getVereniging());
+        dto.setSport(model.getSport());
+        dto.setVoorkeursNrAanwezig(model.getVoorkeursNrAanwezig());
+        dto.setTekortMailTo(model.getTekortMailTo());
+        dto.setWaarschuwingMailTo(model.getWaarschuwingMailTo());
+        dto.setWaarschuwingMailDagen(model.getWaarschuwingMailDagen());
+        dto.setReminderDays(model.getReminderDays());
+        dto.setStrafpunten(model.getStrafpunten());
         dto.setTeammembers(teammemberMapper.toDto(model.getTeammembers()));
         dto.setCompetitions(competitionMapper.toDto(model.getCompetitions()));
         return dto;

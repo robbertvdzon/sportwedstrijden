@@ -19,6 +19,8 @@ public class CompetitionMapper {
         CompetitionDto dto = new CompetitionDto();
         dto.setCompetitionname(model.getDescription());
         dto.setUuid(""+model.getId());
+        dto.setSeason(model.getSeason());
+        dto.setStatus(model.getStatus());
         dto.setGames(gameMapper.toDto(model.getGames()));
         return dto;
     }

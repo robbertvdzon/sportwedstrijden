@@ -21,6 +21,14 @@ public class UserMapper {
         UserDto dto = new UserDto();
         dto.setUsername(model.getUsername());
         dto.setUuid("" + model.getId());
+        dto.setEmail(model.getEmail());
+        dto.setName(model.getName());
+        dto.setActiveAccount(model.isActiveAccount());
+        dto.setActivationID(model.getActivationID());
+        dto.setCreationDate(model.getCreationDate());
+        dto.setPhonenumber(model.getPhonenumber());
+        dto.setRequestConnectTeam(model.getRequestConnectTeam());
+        dto.setProUser(model.isProUser());
 
         // copy the teams directly, skip the teammembers
         List<TeamDto> teams = new ArrayList<TeamDto>();

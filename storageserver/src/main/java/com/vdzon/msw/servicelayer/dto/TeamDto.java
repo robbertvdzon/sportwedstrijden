@@ -1,6 +1,7 @@
 package com.vdzon.msw.servicelayer.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TeamDto implements Serializable {
@@ -16,8 +17,8 @@ public class TeamDto implements Serializable {
     private Long managedCompetitieID;
     private Long strafpunten;
     private String aanvoerder;
-    private List<TeammemberDto> teammembers;
-    private List<CompetitionDto> competitions;
+    private List<TeammemberDto> teammembers = new ArrayList<>();
+    private List<CompetitionDto> competitions = new ArrayList<>();
 
     public String getUuid() {
         return uuid;

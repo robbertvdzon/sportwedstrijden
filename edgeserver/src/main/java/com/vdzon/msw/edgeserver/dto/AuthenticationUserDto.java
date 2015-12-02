@@ -1,7 +1,6 @@
-package com.vdzon.msw.portlet.dto;
+package com.vdzon.msw.edgeserver.dto;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class AuthenticationUserDto implements Serializable {
     private String uuid;

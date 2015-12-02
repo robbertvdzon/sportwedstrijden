@@ -17,7 +17,6 @@ public class TeamDto implements Serializable {
     private Long managedCompetitieID;
     private Long strafpunten;
     private String aanvoerder;
-
     private List<TeammemberDto> teammembers = new ArrayList<>();
     private List<CompetitionDto> competitions = new ArrayList<>();
 

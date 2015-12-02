@@ -2,7 +2,6 @@ package com.vdzon.msw.importmsw.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
 import java.util.List;
 
 @Entity

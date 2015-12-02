@@ -1,21 +1,28 @@
 package com.vdzon.msw.servicelayer.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+
 import java.io.Serializable;
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 public class TeammemberDto implements Serializable {
     private String uuid;
     private String nickname;
     private String userUuid;
     private String teamUuid;
-    private boolean admin;
-    private boolean deleted;
-    private boolean supporter;
+    private Boolean admin;
+    private Boolean deleted;
+    private Boolean supporter;
     private String invitationEmail;
-    private Date invitationDate;
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    private LocalDateTime invitationDate;
     private String invitationID;
     private Long acceptEmail;
-    private boolean invaller;
+    private Boolean invaller;
 
     public String getUuid() {
         return uuid;
@@ -49,27 +56,27 @@ public class TeammemberDto implements Serializable {
         this.teamUuid = teamUuid;
     }
 
-    public boolean getAdmin() {
+    public Boolean getAdmin() {
         return admin;
     }
 
-    public void setAdmin(boolean admin) {
+    public void setAdmin(Boolean admin) {
         this.admin = admin;
     }
 
-    public boolean isDeleted() {
+    public Boolean isDeleted() {
         return deleted;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
     }
 
-    public boolean isSupporter() {
+    public Boolean isSupporter() {
         return supporter;
     }
 
-    public void setSupporter(boolean supporter) {
+    public void setSupporter(Boolean supporter) {
         this.supporter = supporter;
     }
 
@@ -81,11 +88,11 @@ public class TeammemberDto implements Serializable {
         this.invitationEmail = invitationEmail;
     }
 
-    public Date getInvitationDate() {
+    public LocalDateTime getInvitationDate() {
         return invitationDate;
     }
 
-    public void setInvitationDate(Date invitationDate) {
+    public void setInvitationDate(LocalDateTime invitationDate) {
         this.invitationDate = invitationDate;
     }
 
@@ -105,11 +112,29 @@ public class TeammemberDto implements Serializable {
         this.acceptEmail = acceptEmail;
     }
 
-    public boolean isInvaller() {
+    public Boolean isInvaller() {
         return invaller;
     }
 
-    public void setInvaller(boolean invaller) {
+    public void setInvaller(Boolean invaller) {
         this.invaller = invaller;
+    }
+
+    @Override
+    public String toString() {
+        return "TeammemberDto{" +
+                "uuid='" + uuid + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", userUuid='" + userUuid + '\'' +
+                ", teamUuid='" + teamUuid + '\'' +
+                ", admin=" + admin +
+                ", deleted=" + deleted +
+                ", supporter=" + supporter +
+                ", invitationEmail='" + invitationEmail + '\'' +
+                ", invitationDate=" + invitationDate +
+                ", invitationID='" + invitationID + '\'' +
+                ", acceptEmail=" + acceptEmail +
+                ", invaller=" + invaller +
+                '}';
     }
 }

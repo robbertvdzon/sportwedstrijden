@@ -21,8 +21,17 @@ public class TeamMapper {
     public TeamDto toDto(final Team model) {
         if (model == null) return null;
         TeamDto dto = new TeamDto();
-        dto.setTeamname(model.getTeamname());
         dto.setUuid(""+model.getId());
+        dto.setTeamname(model.getTeamname());
+        dto.setVereniging(model.getVereniging());
+        dto.setSport(model.getSport());
+        dto.setVoorkeursNrAanwezig(model.getVoorkeursNrAanwezig());
+        dto.setTekortMailTo(model.getTekortMailTo());
+        dto.setWaarschuwingMailTo(model.getWaarschuwingMailTo());
+        dto.setWaarschuwingMailDagen(model.getWaarschuwingMailDagen());
+        dto.setReminderDays(model.getReminderDays());
+        dto.setStrafpunten(model.getStrafpunten());
+
         for (Teammember teammember:model.getTeammembers()){
             if (!teammember.isDeleted()){
                 dto.getTeammembers().add(teammemberMapper.toDto(teammember));

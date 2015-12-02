@@ -53,7 +53,7 @@ public class ImportResource {
     @Inject
     GameMapper gameMapper;
 
-    @RequestMapping(value = "/importAuthenticationUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/importAuthenticationUser", method = RequestMethod.PUT)
     public ResponseEntity importAuthenticationUser(@RequestBody AuthenticationUserDto dto) throws Exception {
         // merge or add authentication user
         User user = getOrCreateUser(dto);
@@ -62,7 +62,7 @@ public class ImportResource {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/importUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/importUser", method = RequestMethod.PUT)
     public ResponseEntity importUser(@RequestBody UserDto dto) throws Exception {
 
         // merge or add user

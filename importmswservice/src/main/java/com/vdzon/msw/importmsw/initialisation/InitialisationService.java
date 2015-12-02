@@ -49,6 +49,7 @@ public class InitialisationService {
             importFromMsw();
         }
         catch(Exception ex){
+            ex.printStackTrace();
             // try again, the service is not up yet. We must change this later, then just every night
             try {
                 Thread.sleep(90*1000);
@@ -68,25 +69,29 @@ public class InitialisationService {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        for (User u : userRepository.findAll()) {
-            if (activeUser(u)) {
-                UserDto userDto = userMapper.toDto(u);
-                AuthenticationUserDto authenticationUserDto = authenticationUserMapper.toDto(u);
+        System.out.println("Find robbert");
+        User robbert = userRepository.findByUsername("robbert");
+        migrate(uriUserBuilder, uriAuthUserBuilder, restTemplate, robbert);
 
-                ResponseEntity response = restTemplate.postForEntity(uriUserBuilder.build().toUri(), userDto, null);
-                if (response.getStatusCode() != HttpStatus.OK) {
-                    System.out.println("failed to import");
-                }
+//        for (User u : userRepository.findAll()) {
+//            if (activeUser(u)) {
+//                System.out.println(u);
+//                migrate(uriUserBuilder, uriAuthUserBuilder, restTemplate, u);
+//            }
+//        }
+        System.out.println("finished");
 
-                response = restTemplate.postForEntity(uriAuthUserBuilder.build().toUri(), authenticationUserDto, null);
-                if (response.getStatusCode() != HttpStatus.OK) {
-                    System.out.println("failed to import");
-                }
-
-            }
-        }
     }
 
+    private void migrate(UriComponentsBuilder uriUserBuilder, UriComponentsBuilder uriAuthUserBuilder, RestTemplate restTemplate, User u) {
+        UserDto userDto = userMapper.toDto(u);
+        AuthenticationUserDto authenticationUserDto = authenticationUserMapper.toDto(u);
+
+        System.out.println("Call post:"+userDto.getUsername());
+
+        restTemplate.put(uriUserBuilder.build().toUri(), userDto);
+        restTemplate.put(uriAuthUserBuilder.build().toUri(), authenticationUserDto);
+    }
 
 
     private boolean activeUser(User user) {

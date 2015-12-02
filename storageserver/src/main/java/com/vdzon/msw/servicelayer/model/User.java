@@ -2,7 +2,7 @@ package com.vdzon.msw.servicelayer.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class User implements Serializable {
     private String name;
     private Boolean activeAccount;
     private String activationID;
-    private Date creationDate;
+    private LocalDateTime creationDate;
     private String phonenumber;
     private String requestConnectTeam;
     private Boolean proUser;
@@ -114,11 +114,11 @@ public class User implements Serializable {
         this.activationID = activationID;
     }
 
-    public Date getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 

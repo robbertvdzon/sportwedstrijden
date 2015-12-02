@@ -2,7 +2,7 @@ package com.vdzon.msw.importmsw.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -18,7 +18,7 @@ public class Teammember implements Serializable {
     private boolean deleted;
     private boolean supporter;
     private String invitationEmail;
-    private Date invitationDate;
+    private LocalDateTime invitationDate;
     private String invitationID;
     private Long acceptEmail;
     private boolean invaller;
@@ -75,11 +75,11 @@ public class Teammember implements Serializable {
         this.invitationEmail = invitationEmail;
     }
 
-    public Date getInvitationDate() {
+    public LocalDateTime getInvitationDate() {
         return invitationDate;
     }
 
-    public void setInvitationDate(Date invitationDate) {
+    public void setInvitationDate(LocalDateTime invitationDate) {
         this.invitationDate = invitationDate;
     }
 

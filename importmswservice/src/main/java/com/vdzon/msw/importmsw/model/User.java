@@ -2,7 +2,7 @@ package com.vdzon.msw.importmsw.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -17,7 +17,7 @@ public class User implements Serializable {
     private String password;
     private boolean activeAccount;
     private String activationID;
-    private Date creationDate;
+    private LocalDateTime creationDate;
     private String phonenumber;
     private String requestConnectTeam;
     private boolean proUser;
@@ -104,11 +104,11 @@ public class User implements Serializable {
         this.proUser = proUser;
     }
 
-    public Date getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 

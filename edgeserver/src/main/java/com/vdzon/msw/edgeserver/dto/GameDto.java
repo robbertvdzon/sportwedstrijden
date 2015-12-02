@@ -1,4 +1,4 @@
-package com.vdzon.msw.portlet.dto;
+package com.vdzon.msw.edgeserver.dto;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ public class GameDto implements Serializable {
     private Long datetime;
     private String meetingpoint;
     private String score;
-    private boolean homegame;
+    private Boolean homegame;
     private Long points;
     private Long gameType;
     private Long gameStatus;
@@ -67,11 +67,11 @@ public class GameDto implements Serializable {
         this.score = score;
     }
 
-    public boolean isHomegame() {
+    public Boolean isHomegame() {
         return homegame;
     }
 
-    public void setHomegame(boolean homegame) {
+    public void setHomegame(Boolean homegame) {
         this.homegame = homegame;
     }
 

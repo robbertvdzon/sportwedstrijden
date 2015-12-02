@@ -1,12 +1,13 @@
-package com.vdzon.msw.portlet.dto;
+package com.vdzon.msw.edgeserver.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CompetitionDto implements Serializable {
     private String uuid;
     private String teamUuid;
-    private List<GameDto> games;
+    private List<GameDto> games = new ArrayList<>();
     private String competitionname;
     private String season;
     private Long status;

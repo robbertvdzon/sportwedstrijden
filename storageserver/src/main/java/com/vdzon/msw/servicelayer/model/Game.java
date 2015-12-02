@@ -2,6 +2,7 @@ package com.vdzon.msw.servicelayer.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "game")
@@ -12,7 +13,7 @@ public class Game implements Serializable {
     private Long id;
     private String uuid;
     private String tegenpartij;
-    private Long datetime;
+    private LocalDateTime datetime;
 //    private String membersPresentYes;
 //    private String membersPresentNo;
 //    private String goals;
@@ -66,11 +67,11 @@ public class Game implements Serializable {
         this.tegenpartij = tegenpartij;
     }
 
-    public Long getDatetime() {
+    public LocalDateTime getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(Long datetime) {
+    public void setDatetime(LocalDateTime datetime) {
         this.datetime = datetime;
     }
 

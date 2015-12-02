@@ -1,8 +1,8 @@
-package com.vdzon.msw.portlet.rest;
+package com.vdzon.msw.edgeserver.rest;
 
-import com.vdzon.msw.portlet.dto.TeamDto;
-import com.vdzon.msw.portlet.dto.TeammemberDto;
-import com.vdzon.msw.portlet.services.AuthenticationService;
+import com.vdzon.msw.edgeserver.dto.TeamDto;
+import com.vdzon.msw.edgeserver.dto.TeammemberDto;
+import com.vdzon.msw.edgeserver.services.AuthenticationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

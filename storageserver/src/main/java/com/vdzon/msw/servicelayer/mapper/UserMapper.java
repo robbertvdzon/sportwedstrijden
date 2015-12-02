@@ -2,7 +2,6 @@ package com.vdzon.msw.servicelayer.mapper;
 
 import com.vdzon.msw.servicelayer.dto.TeamDto;
 import com.vdzon.msw.servicelayer.dto.UserDto;
-import com.vdzon.msw.servicelayer.model.Team;
 import com.vdzon.msw.servicelayer.model.Teammember;
 import com.vdzon.msw.servicelayer.model.User;
 import org.springframework.stereotype.Component;
@@ -19,6 +18,15 @@ public class UserMapper {
 
     public User mergeModel(final UserDto dto, User model) {
         model.setUsername(dto.getUsername());
+        model.setUuid(dto.getUuid());
+        model.setEmail(dto.getEmail());
+        model.setName(dto.getName());
+        model.setActiveAccount(dto.isActiveAccount());
+        model.setActivationID(dto.getActivationID());
+        model.setCreationDate(dto.getCreationDate());
+        model.setPhonenumber(dto.getPhonenumber());
+        model.setRequestConnectTeam(dto.getRequestConnectTeam());
+        model.setProUser(dto.isProUser());
         return model;
     }
 
@@ -27,6 +35,14 @@ public class UserMapper {
         UserDto dto = new UserDto();
         dto.setUsername(model.getUsername());
         dto.setUuid(model.getUuid());
+        dto.setEmail(model.getEmail());
+        dto.setName(model.getName());
+        dto.setActiveAccount(model.isActiveAccount());
+        dto.setActivationID(model.getActivationID());
+        dto.setCreationDate(model.getCreationDate());
+        dto.setPhonenumber(model.getPhonenumber());
+        dto.setRequestConnectTeam(model.getRequestConnectTeam());
+        dto.setProUser(model.isProUser());
 
         // copy the teams directly, skip the teammembers
         List<TeamDto> teams = new ArrayList<TeamDto>();

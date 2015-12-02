@@ -1,4 +1,4 @@
-package com.vdzon.msw.portlet.authentication;
+package com.vdzon.msw.edgeserver.authentication;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

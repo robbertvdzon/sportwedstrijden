@@ -1,7 +1,7 @@
-package com.vdzon.msw.portlet.services;
+package com.vdzon.msw.edgeserver.services;
 
 
-import com.vdzon.msw.portlet.authentication.AuthUser;
+import com.vdzon.msw.edgeserver.authentication.AuthUser;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 

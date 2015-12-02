@@ -1,7 +1,14 @@
 package com.vdzon.msw.importmsw.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+
 import java.io.Serializable;
-import java.sql.Date;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class UserDto implements Serializable {
@@ -9,13 +16,15 @@ public class UserDto implements Serializable {
     private String username;
     private String email;
     private String name;
-    private boolean activeAccount;
+    private Boolean activeAccount;
     private String activationID;
-    private Date creationDate;
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    private LocalDateTime creationDate;
     private String phonenumber;
     private String requestConnectTeam;
-    private boolean proUser;
-    private List<TeamDto> teams;
+    private Boolean proUser;
+    private List<TeamDto> teams = new ArrayList<>();
 
     public String getUuid() {
         return uuid;
@@ -57,11 +66,11 @@ public class UserDto implements Serializable {
         this.name = name;
     }
 
-    public boolean isActiveAccount() {
+    public Boolean isActiveAccount() {
         return activeAccount;
     }
 
-    public void setActiveAccount(boolean activeAccount) {
+    public void setActiveAccount(Boolean activeAccount) {
         this.activeAccount = activeAccount;
     }
 
@@ -73,11 +82,11 @@ public class UserDto implements Serializable {
         this.activationID = activationID;
     }
 
-    public Date getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -97,11 +106,11 @@ public class UserDto implements Serializable {
         this.requestConnectTeam = requestConnectTeam;
     }
 
-    public boolean isProUser() {
+    public Boolean isProUser() {
         return proUser;
     }
 
-    public void setProUser(boolean proUser) {
+    public void setProUser(Boolean proUser) {
         this.proUser = proUser;
     }
 }

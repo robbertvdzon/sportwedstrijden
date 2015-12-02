@@ -16,6 +16,9 @@ public class CompetitionMapper {
 
     public Competition mergeModel(final CompetitionDto dto, Competition model) {
         model.setCompetitionname(dto.getCompetitionname());
+        model.setUuid(dto.getUuid());
+        model.setSeason(dto.getSeason());
+        model.setStatus(dto.getStatus());
         return model;
     }
 
@@ -24,6 +27,8 @@ public class CompetitionMapper {
         CompetitionDto dto = new CompetitionDto();
         dto.setCompetitionname(model.getCompetitionname());
         dto.setUuid(model.getUuid());
+        dto.setSeason(model.getSeason());
+        dto.setStatus(model.getStatus());
         dto.setGames(gameMapper.toDto(model.getGames()));
         return dto;
     }
