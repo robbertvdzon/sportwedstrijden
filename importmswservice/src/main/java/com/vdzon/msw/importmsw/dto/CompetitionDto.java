@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CompetitionDto implements Serializable {
     private String uuid;
-    private String teamUuid;
+//    private String teamUuid;
     private List<GameDto> games = new ArrayList<>();
     private String competitionname;
     private String season;
@@ -20,13 +20,13 @@ public class CompetitionDto implements Serializable {
         this.uuid = uuid;
     }
 
-    public String getTeamUuid() {
-        return teamUuid;
-    }
-
-    public void setTeamUuid(String teamUuid) {
-        this.teamUuid = teamUuid;
-    }
+//    public String getTeamUuid() {
+//        return teamUuid;
+//    }
+//
+//    public void setTeamUuid(String teamUuid) {
+//        this.teamUuid = teamUuid;
+//    }
 
     public String getCompetitionname() {
         return competitionname;

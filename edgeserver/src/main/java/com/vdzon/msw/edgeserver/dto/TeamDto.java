@@ -14,9 +14,9 @@ public class TeamDto implements Serializable {
     private Long waarschuwingMailTo;
     private Long waarschuwingMailDagen;
     private Long reminderDays;
-    private Long managedCompetitieID;
+//    private Long managedCompetitieID;
     private Long strafpunten;
-    private String aanvoerder;
+//    private String aanvoerder;
     private List<TeammemberDto> teammembers = new ArrayList<>();
     private List<CompetitionDto> competitions = new ArrayList<>();
 
@@ -92,13 +92,13 @@ public class TeamDto implements Serializable {
         this.reminderDays = reminderDays;
     }
 
-    public Long getManagedCompetitieID() {
-        return managedCompetitieID;
-    }
-
-    public void setManagedCompetitieID(Long managedCompetitieID) {
-        this.managedCompetitieID = managedCompetitieID;
-    }
+//    public Long getManagedCompetitieID() {
+//        return managedCompetitieID;
+//    }
+//
+//    public void setManagedCompetitieID(Long managedCompetitieID) {
+//        this.managedCompetitieID = managedCompetitieID;
+//    }
 
     public Long getStrafpunten() {
         return strafpunten;
@@ -108,13 +108,13 @@ public class TeamDto implements Serializable {
         this.strafpunten = strafpunten;
     }
 
-    public String getAanvoerder() {
-        return aanvoerder;
-    }
-
-    public void setAanvoerder(String aanvoerder) {
-        this.aanvoerder = aanvoerder;
-    }
+//    public String getAanvoerder() {
+//        return aanvoerder;
+//    }
+//
+//    public void setAanvoerder(String aanvoerder) {
+//        this.aanvoerder = aanvoerder;
+//    }
 
     public List<TeammemberDto> getTeammembers() {
         return teammembers;

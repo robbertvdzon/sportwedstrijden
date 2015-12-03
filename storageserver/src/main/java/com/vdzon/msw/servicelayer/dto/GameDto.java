@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class GameDto implements Serializable {
     private String uuid;
-    private String conpetitionUuid;
+//    private String conpetitionUuid;
     private String tegenpartij;
     private Long datetime;
     private String meetingpoint;
@@ -27,13 +27,13 @@ public class GameDto implements Serializable {
         this.uuid = uuid;
     }
 
-    public String getConpetitionUuid() {
-        return conpetitionUuid;
-    }
-
-    public void setConpetitionUuid(String conpetitionUuid) {
-        this.conpetitionUuid = conpetitionUuid;
-    }
+//    public String getConpetitionUuid() {
+//        return conpetitionUuid;
+//    }
+//
+//    public void setConpetitionUuid(String conpetitionUuid) {
+//        this.conpetitionUuid = conpetitionUuid;
+//    }
 
     public String getTegenpartij() {
         return tegenpartij;

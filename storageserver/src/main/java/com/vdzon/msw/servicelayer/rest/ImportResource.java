@@ -12,6 +12,7 @@ import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.util.Date;
 
 @RestController
 @RequestMapping("/api/import")
@@ -64,6 +65,7 @@ public class ImportResource {
 
     @RequestMapping(value = "/importUser", method = RequestMethod.PUT)
     public ResponseEntity importUser(@RequestBody UserDto dto) throws Exception {
+        long start = new Date().getTime();
 
         // merge or add user
         User user = getOrCreateUser(dto);
@@ -108,6 +110,9 @@ public class ImportResource {
         }
 
         userRepository.save(user);
+        long end = new Date().getTime();
+        long diff = end-start;
+        System.out.println("imorted in msec:"+diff);
         return new ResponseEntity(HttpStatus.OK);
     }
 

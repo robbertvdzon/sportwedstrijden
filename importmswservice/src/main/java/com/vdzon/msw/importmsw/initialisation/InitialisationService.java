@@ -16,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.inject.Inject;
+import java.util.Date;
 
 @Service
 public class InitialisationService {
@@ -71,14 +72,22 @@ public class InitialisationService {
 
         System.out.println("Find robbert");
         User robbert = userRepository.findByUsername("robbert");
-        migrate(uriUserBuilder, uriAuthUserBuilder, restTemplate, robbert);
+//        migrate(uriUserBuilder, uriAuthUserBuilder, restTemplate, robbert);
 
-//        for (User u : userRepository.findAll()) {
-//            if (activeUser(u)) {
-//                System.out.println(u);
-//                migrate(uriUserBuilder, uriAuthUserBuilder, restTemplate, u);
-//            }
-//        }
+        Iterable<User> all = userRepository.findAll();
+        long start = new Date().getTime();
+        int count = 0;
+        for (User u : all) {
+            if (activeUser(u)) {
+                migrate(uriUserBuilder, uriAuthUserBuilder, restTemplate, u);
+                count++;
+                long time = new Date().getTime();
+                long diff = time-start;
+                long average = diff/count;
+                System.out.println("run "+count+" :"+average );
+
+            }
+        }
         System.out.println("finished");
 
     }
