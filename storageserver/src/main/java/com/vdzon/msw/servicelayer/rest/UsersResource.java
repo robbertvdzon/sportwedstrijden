@@ -1,6 +1,6 @@
 package com.vdzon.msw.servicelayer.rest;
 
-import com.vdzon.msw.servicelayer.dto.UserDto;
+import com.vdzon.msw.shared.dto.UserDto;
 import com.vdzon.msw.servicelayer.mapper.UserMapper;
 import com.vdzon.msw.servicelayer.model.User;
 import com.vdzon.msw.servicelayer.repository.UserRepository;

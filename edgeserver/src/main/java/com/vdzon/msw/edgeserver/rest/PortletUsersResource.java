@@ -1,6 +1,6 @@
 package com.vdzon.msw.edgeserver.rest;
 
-import com.vdzon.msw.edgeserver.dto.UserDto;
+import com.vdzon.msw.shared.dto.UserDto;
 import com.vdzon.msw.edgeserver.services.AuthenticationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

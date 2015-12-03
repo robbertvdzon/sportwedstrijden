@@ -1,6 +1,6 @@
 package com.vdzon.msw.servicelayer.mapper;
 
-import com.vdzon.msw.servicelayer.dto.CompetitionDto;
+import com.vdzon.msw.shared.dto.CompetitionDto;
 import com.vdzon.msw.servicelayer.model.Competition;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,6 @@
 package com.vdzon.msw.servicelayer.rest;
 
-import com.vdzon.msw.servicelayer.dto.*;
+import com.vdzon.msw.shared.dto.*;
 import com.vdzon.msw.servicelayer.mapper.*;
 import com.vdzon.msw.servicelayer.model.*;
 import com.vdzon.msw.servicelayer.repository.*;

@@ -1,4 +1,4 @@
-package com.vdzon.msw.servicelayer.dto;
+package com.vdzon.msw.shared.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

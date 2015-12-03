@@ -1,6 +1,6 @@
 package com.vdzon.msw.importmsw.mapper;
 
-import com.vdzon.msw.importmsw.dto.CompetitionDto;
+import com.vdzon.msw.shared.dto.CompetitionDto;
 import com.vdzon.msw.importmsw.model.Competition;
 import org.springframework.stereotype.Component;
 

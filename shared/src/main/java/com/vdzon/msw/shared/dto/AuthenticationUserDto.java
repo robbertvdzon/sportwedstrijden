@@ -1,4 +1,4 @@
-package com.vdzon.msw.importmsw.dto;
+package com.vdzon.msw.shared.dto;
 
 import java.io.Serializable;
 

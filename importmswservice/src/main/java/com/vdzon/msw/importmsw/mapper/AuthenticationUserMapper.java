@@ -1,6 +1,6 @@
 package com.vdzon.msw.importmsw.mapper;
 
-import com.vdzon.msw.importmsw.dto.AuthenticationUserDto;
+import com.vdzon.msw.shared.dto.AuthenticationUserDto;
 import com.vdzon.msw.importmsw.model.User;
 import org.springframework.stereotype.Component;
 

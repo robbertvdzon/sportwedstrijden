@@ -1,4 +1,4 @@
-package com.vdzon.msw.edgeserver.dto;
+package com.vdzon.msw.shared.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;

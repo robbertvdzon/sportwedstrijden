@@ -1,6 +1,6 @@
 package com.vdzon.msw.importmsw.mapper;
 
-import com.vdzon.msw.importmsw.dto.GameDto;
+import com.vdzon.msw.shared.dto.GameDto;
 import com.vdzon.msw.importmsw.model.Game;
 import org.springframework.stereotype.Component;
 

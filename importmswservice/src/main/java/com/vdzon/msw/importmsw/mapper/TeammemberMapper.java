@@ -1,6 +1,6 @@
 package com.vdzon.msw.importmsw.mapper;
 
-import com.vdzon.msw.importmsw.dto.TeammemberDto;
+import com.vdzon.msw.shared.dto.TeammemberDto;
 import com.vdzon.msw.importmsw.model.Teammember;
 import org.springframework.stereotype.Component;
 

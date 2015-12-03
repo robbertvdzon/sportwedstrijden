@@ -1,6 +1,6 @@
 package com.vdzon.msw.edgeserver.rest;
 
-import com.vdzon.msw.edgeserver.dto.TeammemberDto;
+import com.vdzon.msw.shared.dto.TeammemberDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

@@ -1,6 +1,6 @@
 package com.vdzon.msw.servicelayer.mapper;
 
-import com.vdzon.msw.servicelayer.dto.TeamDto;
+import com.vdzon.msw.shared.dto.TeamDto;
 import com.vdzon.msw.servicelayer.model.Team;
 import org.springframework.stereotype.Component;
 

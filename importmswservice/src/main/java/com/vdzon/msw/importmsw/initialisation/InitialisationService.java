@@ -1,7 +1,7 @@
 package com.vdzon.msw.importmsw.initialisation;
 
-import com.vdzon.msw.importmsw.dto.AuthenticationUserDto;
-import com.vdzon.msw.importmsw.dto.UserDto;
+import com.vdzon.msw.shared.dto.AuthenticationUserDto;
+import com.vdzon.msw.shared.dto.UserDto;
 import com.vdzon.msw.importmsw.mapper.AuthenticationUserMapper;
 import com.vdzon.msw.importmsw.mapper.UserMapper;
 import com.vdzon.msw.importmsw.model.Competition;

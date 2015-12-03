@@ -1,6 +1,6 @@
 package com.vdzon.msw.servicelayer.rest;
 
-import com.vdzon.msw.servicelayer.dto.TeamDto;
+import com.vdzon.msw.shared.dto.TeamDto;
 import com.vdzon.msw.servicelayer.mapper.TeamMapper;
 import com.vdzon.msw.servicelayer.model.Team;
 import com.vdzon.msw.servicelayer.repository.TeamRepository;
