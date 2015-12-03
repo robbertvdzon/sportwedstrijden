@@ -72,22 +72,22 @@ public class InitialisationService {
 
         System.out.println("Find robbert");
         User robbert = userRepository.findByUsername("robbert");
-//        migrate(uriUserBuilder, uriAuthUserBuilder, restTemplate, robbert);
+        migrate(uriUserBuilder, uriAuthUserBuilder, restTemplate, robbert);
 
-        Iterable<User> all = userRepository.findAll();
-        long start = new Date().getTime();
-        int count = 0;
-        for (User u : all) {
-            if (activeUser(u)) {
-                migrate(uriUserBuilder, uriAuthUserBuilder, restTemplate, u);
-                count++;
-                long time = new Date().getTime();
-                long diff = time-start;
-                long average = diff/count;
-                System.out.println("run "+count+" :"+average );
-
-            }
-        }
+//        Iterable<User> all = userRepository.findAll();
+//        long start = new Date().getTime();
+//        int count = 0;
+//        for (User u : all) {
+//            if (activeUser(u)) {
+//                migrate(uriUserBuilder, uriAuthUserBuilder, restTemplate, u);
+//                count++;
+//                long time = new Date().getTime();
+//                long diff = time-start;
+//                long average = diff/count;
+//                System.out.println("run "+count+" :"+average );
+//
+//            }
+//        }
         System.out.println("finished");
 
     }
