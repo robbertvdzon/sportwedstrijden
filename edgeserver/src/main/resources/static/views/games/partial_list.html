@@ -1,5 +1,5 @@
 <md-list ng-cloak>
-<md-subheader class="md-no-sticky">Mijn Wedstrijden</md-subheader>
+<md-subheader class="md-no-sticky" id="games-title">Mijn Wedstrijden</md-subheader>
 
 <md-list-item ng-repeat="game in games" ng-class-odd="'odd'" ng-class-even="'even'">
     <div md-ink-ripple ng-click="edit('{{game.uuid}}')" style="width: 100%;"  >

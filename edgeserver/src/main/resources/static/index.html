@@ -26,32 +26,32 @@
 
     <md-list>
         <md-list-item hide-gt-md="">
-            <md-button ng-click="toggleMenu()"  class="md-primary" >
+            <md-button ng-click="toggleMenu()" class="md-primary" id="close_main_button">
                 Close
             </md-button>
         </md-list-item>
         <md-list-item >
-            <md-button ng-href="#/home" ng-show="isAuth()" class="md-primary" >
+            <md-button ng-href="#/home" ng-show="isAuth()" class="md-primary" id="home_main_button">
                 Home
             </md-button>
         </md-list-item>
         <md-list-item >
-            <md-button ng-href="#/teams" ng-show="isAuth()" class="md-primary" >
+            <md-button ng-href="#/teams" ng-show="isAuth()" class="md-primary" id="teams_main_button">
                 Teams
             </md-button>
         </md-list-item>
         <md-list-item >
-            <md-button ng-href="#/competitions" ng-show="isAuth()" class="md-primary" >
+            <md-button ng-href="#/competitions" ng-show="isAuth()" class="md-primary" id="competitions_main_button">
                 Competities
             </md-button>
         </md-list-item>
         <md-list-item >
-            <md-button ng-href="#/games" ng-show="isAuth()" class="md-primary" >
+            <md-button ng-href="#/games" ng-show="isAuth()" class="md-primary" id="games_main_button">
                 Wedstrijden
             </md-button>
         </md-list-item>
         <md-list-item >
-            <md-button ng-href="#/settings" ng-show="isAuth()" class="md-primary" >
+            <md-button ng-href="#/settings" ng-show="isAuth()" class="md-primary" id="settings_main_button">
                 Instellingen
             </md-button>
         </md-list-item>
@@ -67,10 +67,10 @@
 
         <h1 class="md-toolbar-tools">MIJN SPORTWEDSTRIJDEN</h1>
 
-        <md-button ng-click="openLoginPopup()" ng-hide="isAuth()" class="md-primary" >
+        <md-button ng-click="openLoginPopup()" ng-hide="isAuth()" class="md-primary" id="login_button" >
             Login
         </md-button>
-        <md-button ng-click="logOff()" ng-show="isAuth()" class="md-primary" >
+        <md-button ng-click="logOff()" ng-show="isAuth()" class="md-primary" id="logoff_button">
             Logoff
         </md-button>
 

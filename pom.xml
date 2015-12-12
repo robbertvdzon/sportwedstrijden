@@ -15,6 +15,7 @@
         <module>storageserver</module>
         <module>importmswservice</module>
         <module>shared</module>
+        <module>cucumber</module>
     </modules>
 
     <!--<build>-->
