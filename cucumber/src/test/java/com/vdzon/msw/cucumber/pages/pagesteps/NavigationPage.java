@@ -9,7 +9,8 @@ public class NavigationPage {
     private String getBaseUrl(){
         String url = System.getProperty("url");
         System.out.println("URL FOM PROPERTY="+url);
-        return url == null ? "http://localhost:8082" : url;
+        return url == null ? "http://149.210.235.58" : url;
+//        return url == null ? "http://localhost:8082" : url;
     }
 
     public HomePage when_I_logout() {
