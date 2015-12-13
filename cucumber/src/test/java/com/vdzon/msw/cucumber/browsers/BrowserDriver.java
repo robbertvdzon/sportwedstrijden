@@ -17,11 +17,19 @@ public class BrowserDriver {
         if (mDriver == null) {
             try {
                 mDriver = BrowserFactory.getBrowser();
+                System.out.println("succeeded");
             } catch (UnreachableBrowserException e) {
+                e.printStackTrace();
+                System.out.println("try to get the browser again!");
                 mDriver = BrowserFactory.getBrowser();
+                System.out.println("succeeded");
             } catch (WebDriverException e) {
+                e.printStackTrace();
+                System.out.println("try to get the browser again!");
                 mDriver = BrowserFactory.getBrowser();
+                System.out.println("succeeded");
             } finally {
+                System.out.println("add shutdown hook");
                 Runtime.getRuntime().addShutdownHook(new Thread(new BrowserCleanup()));
             }
         }
