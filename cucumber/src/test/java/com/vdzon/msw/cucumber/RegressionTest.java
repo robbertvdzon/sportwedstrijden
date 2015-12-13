@@ -8,5 +8,5 @@ import cucumber.junit.Cucumber;
         features = "MockApp",//path to the features
         format = {"json:target/integration_cucumber.json"},//what formatters to use
         tags = {"@all"})//what tags to incluse(@)/exclude(@~)
-public class LoginTest {
+public class RegressionTest {
 }

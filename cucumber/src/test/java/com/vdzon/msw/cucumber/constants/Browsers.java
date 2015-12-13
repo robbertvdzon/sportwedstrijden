@@ -2,6 +2,7 @@ package com.vdzon.msw.cucumber.constants;
 
 public enum Browsers {
 
+    REMOTE,
     FIREFOX,
     CHROME,
     SAFARI;

@@ -8,10 +8,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.awt.*;
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class BrowserFactory {
@@ -36,6 +40,9 @@ public class BrowserFactory {
             browser = Browsers.browserForName(System.getProperty(BROWSER_PROP_KEY));
         }
         switch (browser) {
+            case REMOTE:
+                driver = createRemoteDriver();
+                break;
             case CHROME:
                 driver = createChromeDriver();
                 break;
@@ -61,6 +68,33 @@ public class BrowserFactory {
     }
 
     private static WebDriver createFirefoxDriver(FirefoxProfile firefoxProfile) {
+        File pathToBinary = new File("C:\\apps\\FirefoxPortable\\firefoxportable.exe");
+        FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
+        return new FirefoxDriver(ffBinary, firefoxProfile);
+    }
+
+    public static WebDriver createRemoteDriver() {
+        DesiredCapabilities capability = DesiredCapabilities.firefox();
+//        DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+        RemoteWebDriver driver = null;
+        String seleniumurl = System.getProperty("seleniumurl");
+        if (seleniumurl==null){
+            seleniumurl = "http://localhost:4444/wd/hub";
+        }
+        System.out.println("Selanium server:"+seleniumurl);
+
+        try {
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.manage().window().setSize(new Dimension(1920, 1080));
+        return driver;
+    }
+
+    private static WebDriver createFirefoxDriverLocal(FirefoxProfile firefoxProfile) {
         File pathToBinary = new File("C:\\apps\\FirefoxPortable\\firefoxportable.exe");
         FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
         return new FirefoxDriver(ffBinary, firefoxProfile);
